@@ -13,7 +13,15 @@ class Canton extends Migration
      */
     public function up()
     {
-        //
+     
+        Schema::create('Canton', function (Blueprint $table) {
+            $table->increments ('idCanton');
+            $table->string('Nombre');
+            $table->unsignedInteger('idProvincia');
+            $table->foreign('idProvincia')->references('idProvincia')->on('Provincia');
+            $table->timestamps();
+        });
+        
     }
 
     /**
@@ -23,6 +31,6 @@ class Canton extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('Canton');
     }
 }

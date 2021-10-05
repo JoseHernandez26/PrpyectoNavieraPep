@@ -13,7 +13,15 @@ class Provincia extends Migration
      */
     public function up()
     {
+
+        Schema::create('Provincia', function (Blueprint $table) {
+            $table->increments ('idProvincia');
+            $table->string('Nombre');
+            $table->timestamps();
+        });
         //
+      
+           
     }
 
     /**
@@ -23,6 +31,6 @@ class Provincia extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('Provincia');
     }
 }
