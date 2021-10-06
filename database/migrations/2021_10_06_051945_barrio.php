@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Distrito extends Migration
+class Barrio extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,20 @@ class Distrito extends Migration
      */
     public function up()
     {
-        Schema::create('Distrito', function (Blueprint $table) {
-            $table->increments ('idDistrito');
+        Schema::create('Barrio', function (Blueprint $table) {
+            $table->increments ('idBarrio');
             $table->string('Nombre');
             $table->unsignedInteger('idProvincia');
+            $table->unsignedInteger('idDistrito');
             $table->unsignedInteger('idCanton');
-            $table->foreign('idCanton')->references('idCanton')->on('Canton');
             $table->foreign('idProvincia')->references('idProvincia')->on('Provincia');
+            $table->foreign('idDistrito')->references('idDistrito')->on('Distrito');
+            $table->foreign('idCanton')->references('idCanton')->on('Canton');
+            
+        
             $table->timestamps();
         });
+        
     }
 
     /**
@@ -31,6 +36,6 @@ class Distrito extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Distrito');
+        Schema::dropIfExists('Barrio');
     }
 }
