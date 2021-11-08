@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class provincia extends Model
+class canton extends Model
 {
     use HasFactory;
-
-
 
 
 
@@ -17,9 +15,9 @@ class provincia extends Model
     public function path(){
 
         
-     return '/provincia/'.$this->name;
-
-
-
-    }
+        return '/canton/'.$this->name;
+   
+   
+   
+       }
 }
