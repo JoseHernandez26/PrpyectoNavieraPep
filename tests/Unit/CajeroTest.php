@@ -2,13 +2,12 @@
 
 namespace Tests\Unit;
 
-use App\Models\canton;
+use App\Models\cajero;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class CantonTest extends TestCase
+class CajeroTest extends TestCase
 {
-
     use RefreshDatabase;
     /**
      * A basic unit test example.
@@ -17,10 +16,8 @@ class CantonTest extends TestCase
      */
     public function test_example()
     {
-        $canton =canton::factory()->create();
+        $cajero =cajero::factory()->create();
 
-       $this->assertEquals('/canton/'.$canton->name,$canton->path());
-
-       dd($canton->toArray());
+        $this->assertEquals('/cajero/'.$cajero->id,$cajero->path());
     }
 }

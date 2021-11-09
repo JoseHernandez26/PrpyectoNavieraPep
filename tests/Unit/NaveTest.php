@@ -2,13 +2,12 @@
 
 namespace Tests\Unit;
 
-use App\Models\canton;
+use App\Models\nave;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class CantonTest extends TestCase
+class NaveTest extends TestCase
 {
-
     use RefreshDatabase;
     /**
      * A basic unit test example.
@@ -17,10 +16,10 @@ class CantonTest extends TestCase
      */
     public function test_example()
     {
-        $canton =canton::factory()->create();
+        $nave =nave::factory()->create();
 
-       $this->assertEquals('/canton/'.$canton->name,$canton->path());
+        $this->assertEquals('/nave/'.$nave->id,$nave->path());
 
-       dd($canton->toArray());
+
     }
 }

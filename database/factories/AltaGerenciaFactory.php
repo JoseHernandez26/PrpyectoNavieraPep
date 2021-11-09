@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\provincia;
+use App\Models\altaGerencia;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ProvinciaFactory extends Factory
+class AltaGerenciaFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = provincia::class;
+    protected $model = altaGerencia::class;
 
     /**
      * Define the model's default state.
@@ -22,13 +22,7 @@ class ProvinciaFactory extends Factory
     public function definition()
     {
         return [
-          
-           
-            'nombre' => $this->faker->state(),
-            
-            
-
-           
+            //
         ];
     }
 }

@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class provincia extends Model
+class distrito extends Model
 {
     use HasFactory;
 
-    public function path(){  
-     return '/provincia/'.$this->state;
-    }
+    public function path(){
+        return '/distrito/'.$this->city;
+       }
+
 }

@@ -19,11 +19,10 @@ class ProvinciaTest extends TestCase
      */
     public function test_example()
     {
-$provincia =provincia::factory()->create();
+        $provincia =provincia::factory()->create();
+
+        $this->assertEquals('/provincia/'.$provincia->state,$provincia->path());
     
-        
-
-        $this->assertEquals('/provincia/'.$provincia->name,$provincia->path());
-
+        dd($provincia->toArray());
     }
 }

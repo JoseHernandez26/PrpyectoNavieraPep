@@ -2,13 +2,12 @@
 
 namespace Tests\Unit;
 
-use App\Models\canton;
+use App\Models\sucursal;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class CantonTest extends TestCase
+class SucursalTest extends TestCase
 {
-
     use RefreshDatabase;
     /**
      * A basic unit test example.
@@ -17,10 +16,10 @@ class CantonTest extends TestCase
      */
     public function test_example()
     {
-        $canton =canton::factory()->create();
+        $sucursal =sucursal::factory()->create();
+        
+        $this->assertEquals('/sucursal/'.$sucursal->cityPrefix,$sucursal->path());
 
-       $this->assertEquals('/canton/'.$canton->name,$canton->path());
-
-       dd($canton->toArray());
+        dd($sucursal->toArray());
     }
 }

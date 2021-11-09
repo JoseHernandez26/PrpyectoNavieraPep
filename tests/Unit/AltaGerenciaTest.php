@@ -2,13 +2,13 @@
 
 namespace Tests\Unit;
 
-use App\Models\canton;
+use App\Models\altaGerencia;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class CantonTest extends TestCase
-{
 
+class AltaGerenciaTest extends TestCase
+{
     use RefreshDatabase;
     /**
      * A basic unit test example.
@@ -17,10 +17,8 @@ class CantonTest extends TestCase
      */
     public function test_example()
     {
-        $canton =canton::factory()->create();
+        $altaGerencia =altaGerencia::factory()->create();
 
-       $this->assertEquals('/canton/'.$canton->name,$canton->path());
-
-       dd($canton->toArray());
+        $this->assertEquals('/altaGerencia/'.$altaGerencia->id,$altaGerencia->path());
     }
 }

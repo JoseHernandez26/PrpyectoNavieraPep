@@ -8,16 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class canton extends Model
 {
     use HasFactory;
-
-
-
-
-    public function path(){
-
-        
-        return '/canton/'.$this->name;
-   
-   
-   
+    
+    public function path(){   
+        return '/canton/'.$this->name; 
        }
 }

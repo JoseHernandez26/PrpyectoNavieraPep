@@ -2,13 +2,12 @@
 
 namespace Tests\Unit;
 
-use App\Models\canton;
+use App\Models\ruta;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class CantonTest extends TestCase
+class RutaTest extends TestCase
 {
-
     use RefreshDatabase;
     /**
      * A basic unit test example.
@@ -17,10 +16,10 @@ class CantonTest extends TestCase
      */
     public function test_example()
     {
-        $canton =canton::factory()->create();
+        $ruta =ruta::factory()->create();
 
-       $this->assertEquals('/canton/'.$canton->name,$canton->path());
+        $this->assertEquals('/ruta/'.$ruta->name,$ruta->path());
 
-       dd($canton->toArray());
+        dd($ruta->toArray());
     }
 }
